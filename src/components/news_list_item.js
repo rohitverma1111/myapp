@@ -13,7 +13,7 @@ const NewsItem = ({item}) => {
             color: 'blue'
         }
     })
-    let item_greay = css({
+    let item_greay = css({ 
         background : "lightgrey"
     })
     return(
