@@ -1,0 +1,20 @@
+body,input{
+    margin: 0;
+    font-family: 'Livvic'
+}
+header{
+    background:#03a9f4;
+    text-align: center;
+    padding: 20px 0;
+}
+.logo{
+    color: #fff;
+    font-size: 40px;
+}
+header input{
+    font-size: 20px;
+    margin: 20p 0;
+}
+.grey{
+    background: #ccc;
+}
