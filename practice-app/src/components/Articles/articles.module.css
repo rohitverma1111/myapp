@@ -1,0 +1,41 @@
+.teaminfoHeader{
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    margin-right: 10px;
+}
+.articlePostData{
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    font-size: 13px;
+    background: #fff;
+}
+.articlePostData span{
+    font-weight: 500;
+}
+.articleBody{
+    background: #fff;
+    border: 1px solid #c5c5c5;
+    padding: 10px;
+}
+.articleBody h1{
+    font-size: 25px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+.videoWrapper{
+    margin: 0 5px;
+}
+.videoWrapper iframe{
+    border: 0;
+}
+.videoWrapper h1{
+    font-size: 25px;
+    font-weight: 400;
+    color: #4d4d4d;
+}

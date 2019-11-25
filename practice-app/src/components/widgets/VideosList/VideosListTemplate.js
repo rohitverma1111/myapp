@@ -9,7 +9,7 @@ const VideosListTemplate = (props) => {
             <div className={styles.videoListItem_wrapper}>
                 <div className={styles.left}
                     style={{
-                        background: `url(images/videos/${item.image})`
+                        background: `url(/images/videos/${item.image})`
                     }}
                 >
                     <div></div>
