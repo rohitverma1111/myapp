@@ -5,44 +5,46 @@ import styles from '../../articles.module.css';
 import Header from './header';
 import VideosRelated from '../../../widgets/VideosList/videosRelated/videosRelated';
 class ArticleViideos extends Component {
+   
     state = { 
         article:[],
         team:[],
         teams:[],
         related:[]
      }
-     
-     componentDidMount(){
+     getData = ()=>{
         axios.get(`${URL}/videos?id=${this.props.match.params.id}`)
         .then(response => {
             let article = response.data[0];
-            console.log(article)
             axios.get(`${URL}/teams?id=${article.team}`)
             .then(response => {
-                this.setState({
-                    article,
-                    team:response.data
-                })
-                this.getRelated();
+                   let  team = response.data;
+                   axios.get(`${URL}/teams`)
+                   .then(response=>{
+                       let teams = response.data;
+                       axios.get(`${URL}/videos?q=${team[0].city}&_limit=10`)
+                       .then(res => {
+                           this.setState({
+                                team,
+                                article,
+                                teams,
+                                related: res.data
+                           })
+                       })
+                   })
             })
         })
-       
      }
-     getRelated = () =>{
-        axios.get(`${URL}/teams`)
-        .then(response=>{
-            let teams = response.data;
-            axios.get(`${URL}/videos?q=${this.state.team[0].city}&_limit=6`)
-            .then(res => {
-                this.setState({
-                    teams,
-                    related: res.data
-                })
-            })
-        })
+     componentDidMount(){
+       this.getData()
+     }
+     
+     componentDidUpdate(prevProps){
+         if(this.props.location.pathname !== prevProps.location.pathname){
+            this.getData()
+         }
      }
     render() {
-       
         const article = this.state.article;
         const team = this.state.team;
         return ( 

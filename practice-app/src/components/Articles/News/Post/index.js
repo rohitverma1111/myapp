@@ -34,7 +34,7 @@ class NewsArtiles extends Component {
                 <div className={styles.articleBody}>
                     <h1>{article.title}</h1>
                     <div className={styles.artImage}>
-                        <img src={`/images/articles/${article.image}`}  />
+                        <img src={`/images/articles/${article.image}`} alt=""  />
                     </div>
                     <div className={styles.articleText}>
                         {article.body}
