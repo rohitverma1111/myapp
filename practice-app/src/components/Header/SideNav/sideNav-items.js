@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesone from 'react-fontawesome';
 import style from './sidenav.module.css';
 import {Link} from 'react-router-dom';
-const SideNavItems = () => {
+const SideNavItems = (props) => {
     const items = [
         {
             type: style.option,
@@ -36,10 +36,11 @@ const SideNavItems = () => {
         }
     ]
     const showItems = () =>{
+        console.log(props)
         return items.map((item,i) =>{
             return(
                 <div key={i} className={item.type}>
-                    <Link to={item.link}>
+                    <Link to={item.link} >
                         <FontAwesone name={item.icon} /> {item.text}
                     </Link>
                 </div>
